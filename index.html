@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VIT University Programs</title>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; font-family:"Poppins", sans-serif;}
+body {overflow-x:hidden; background:linear-gradient(to bottom, #e0f7ff, #ffffff); color:#000;}
+
+/* NAVBAR */
+nav {position:fixed; top:0; width:100%; display:flex; justify-content:space-between; align-items:center; padding:20px 50px; background:rgba(255,255,255,0.85); backdrop-filter:blur(5px); z-index:999;}
+nav .logo{font-size:26px; font-weight:700; color:#0073e6;}
+nav ul{display:flex; list-style:none; gap:30px;}
+nav ul li{cursor:pointer; font-weight:500; transition:.3s;}
+nav ul li:hover{color:#0073e6;}
+
+/* HERO SECTION (Image) */
+section.hero {
+    position: relative;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    overflow: hidden;
+}
+section.hero::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: url("img/vit_hero.png") no-repeat center center/cover;
+    z-index: -1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+    padding: 20px;
+}
+.hero-content h1 {
+    font-size: 48px;
+    margin-bottom: 15px;
+    color: #fff;
+    text-shadow: 0 4px 12px rgba(0,0,0,0.7);
+}
+.hero-content p {
+    font-size: 20px;
+    margin-bottom: 30px;
+    color: #f0f0f0;
+    text-shadow: 0 3px 8px rgba(0,0,0,0.6);
+}
+.cta-btn {
+    padding: 14px 32px;
+    background: linear-gradient(45deg,#00c3ff,#0073e6);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 700;
+    transition: all .3s;
+}
+.cta-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0,115,230,0.5);
+}
+
+/* CARD + INFO FORM SECTION */
+.card-section {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin: 50px 20px;
+    padding: 0 20px;
+    position: relative;
+}
+
+.card {
+    background: linear-gradient(145deg,#ffffff,#e0f7ff);
+    border-radius: 20px;
+    width: 300px;
+    padding: 30px;
+    text-align: center;
+    transition: .5s;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(0,115,230,0.784);
+    position: relative;
+    overflow: hidden;
+}
+.card::before {
+    content: "";
+    position: absolute;
+    top: 0; left: -75%;
+    width: 50%; height: 100%;
+    background: rgba(255,255,255,0.2);
+    transform: skewX(-25deg);
+    transition: all .7s;
+}
+.card:hover::before { left: 125%; }
+.card:hover {
+    transform: translateY(-15px) scale(1.05);
+    box-shadow: 0 20px 40px rgba(0,115,230,0.3);
+}
+.card img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin-bottom: 20px;
+    transition: .5s;
+}
+.card:hover img { transform: rotate(20deg) scale(1.1); }
+.card h3 {
+    font-size: 22px;
+    margin-bottom: 12px;
+    color: #0073e6;
+    transition: .5s;
+}
+.card:hover h3 { color: #00c3ff; }
+.card p { font-size: 16px; color: #333; line-height: 1.4; }
+
+/* INFO FORM */
+.info-form {
+    position: relative;
+    margin-left: auto;
+    width: 300px;
+    background: rgba(255,255,255,0.95);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+    flex-shrink: 0;
+    height: max-content;
+}
+.info-form h3 {
+    margin-bottom: 20px;
+    color: #0073e6;
+    text-align: center;
+}
+.info-form input {
+    width: 100%;
+    padding: 10px 12px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+.info-form button {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(45deg,#00c3ff,#0073e6);
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.info-form button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0,115,230,0.5);
+}
+
+/* SECTION STYLING */
+.section {padding:60px 20px; text-align:center;}
+.section h2 {font-size:32px; margin-bottom:40px; color:#0073e6;}
+
+/* Cards Grid */
+.card-container {display:grid; gap:30px; justify-content:center;}
+.cards-4 {grid-template-columns:repeat(auto-fit,minmax(250px,1fr));}
+.cards-8 {grid-template-columns:repeat(4, 1fr);}
+.cards-2 {grid-template-columns:repeat(2, 1fr);}
+.cards-3 {grid-template-columns:repeat(3, 1fr);}
+
+/* Stats Section */
+#stats-section {display:flex; flex-wrap:wrap; justify-content:center; align-items:center; gap:50px;}
+#stats-section canvas {background:#fff; border-radius:50%;}
+
+/* LINE CHART CARD */
+.line-card {background:linear-gradient(145deg,#ffffff,#e0f7ff); border-radius:20px; padding:20px; box-shadow:0 8px 20px rgba(0,115,230,0.3); text-align:center;}
+
+/* FOOTER */
+footer {
+    background: #f0f0f0;
+    color: #333;
+    padding: 25px;
+    text-align: center;
+    font-size: 14px;
+    margin-top: 50px;
+}
+
+/* Responsive */
+@media (max-width:1024px){
+    nav ul{display:none;}
+    .card-section, .card-container {flex-direction:column; align-items:center;}
+    .info-form{margin-left:0; margin-top:30px;}
+    .cards-8 {grid-template-columns:repeat(2,1fr);}
+    .cards-3 {grid-template-columns:repeat(2,1fr);}
+}
+@media (max-width:768px){
+    .hero-content h1{font-size:34px;}
+    .card{width:90%;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+<div class="logo">VIT University</div>
+<ul>
+    <li>Home</li>
+    <li>Programs</li>
+    <li>Research</li>
+    <li>People</li>
+    <li>Placements</li>
+</ul>
+</nav>
+
+<!-- HERO SECTION -->
+<section class="hero">
+<div class="hero-content">
+    <h1>Explore VIT University Programs</h1>
+    <p>MBA, MCA, and MS in Data Science — One Destination for Excellence</p>
+    <button class="cta-btn">Apply Now</button>
+</div>
+</section>
+
+<!-- CARDS + INFO FORM -->
+<div class="card-section">
+<div class="card">
+    <img src="img/MBA.jpeg" alt="MBA">
+    <h3>MBA</h3>
+    <p>Empowering future leaders with strategic thinking, innovation, and real-world management skills.</p>
+</div>
+<div class="card">
+    <img src="img/MCA.jpeg" alt="MCA">
+    <h3>MCA</h3>
+    <p>Master the art of computing, programming, and digital solutions for the tech-driven world.</p>
+</div>
+<div class="card">
+    <img src="img/MS in DS.png" alt="MS in DS">
+    <h3>MS in Data Science</h3>
+    <p>Transform data into insights and decisions with advanced analytics, AI, and machine learning.</p>
+</div>
+<div class="info-form">
+    <h3>Apply Now</h3>
+    <input type="text" placeholder="First Name" required>
+    <input type="text" placeholder="Last Name" required>
+    <input type="email" placeholder="Email" required>
+    <input type="text" placeholder="Country" required>
+    <input type="tel" placeholder="Phone Number" required>
+    <input type="text" placeholder="Experience" required>
+    <input type="text" placeholder="Graduation" required>
+    <input type="text" placeholder="City" required>
+    <button type="submit">Submit</button>
+</div>
+</div>
+
+<!-- 1st Section: About Us -->
+<section class="section">
+<h2>About VIT MBA Program</h2>
+<div class="card-container cards-4">
+<div class="card"><h3>Transformative Learning</h3><p>Industry-relevant curriculum and live projects to accelerate your career.</p></div>
+<div class="card"><h3>Expert Faculty</h3><p>Learn from top management experts and practitioners.</p></div>
+<div class="card"><h3>Global Recognition</h3><p>Accredited by leading boards and recognized worldwide.</p></div>
+<div class="card"><h3>Career Growth</h3><p>Unlock high-paying job opportunities across industries.</p></div>
+</div>
+</section>
+
+<!-- 2nd Section: 8 Images Cards -->
+<section class="section">
+<h2>Specializations & Highlights</h2>
+<div class="card-container cards-8">
+<div class="card"><img src="img/dm_imresizer.jpg"><h3>Marketing</h3></div>
+<div class="card"><img src="img/finance_imresizer.jpg"><h3>Finance</h3></div>
+<div class="card"><img src="img/Hr_imresizer.jpg"><h3>HR</h3></div>
+<div class="card"><img src="img/bi_imresizer.jpg"><h3>Business Analytics</h3></div>
+<div class="card"><img src="img/dm_imresizer.jpg"><h3>Digital Marketing</h3></div>
+<div class="card"><img src="img/om_imresizer.jpg"><h3>Operations</h3></div>
+<div class="card"><img src="img/network_imresizer.jpg"><h3>Security Analysis</h3></div>
+<div class="card"><img src="img/pm_imresizer.jpg"><h3>Portfolio Management</h3></div>
+</div>
+</section>
+
+<!-- 3rd Section: 4 Cards -->
+<section class="section">
+<h2>Admissions & Eligibility</h2>
+<div class="card-container cards-4">
+<div class="card"><h3>Eligibility</h3><p>Graduate with minimum 50% marks.</p></div>
+<div class="card"><h3>Programme Fee</h3><p>₹1,80,000 | Application Fee: ₹1,200</p></div>
+<div class="card"><h3>Duration</h3><p>24 Months | Mixed Mode (Live + Recorded)</p></div>
+<div class="card"><h3>Batch Start</h3><p>January 2026 | Tentative Date</p></div>
+</div>
+</section>
+<!-- 4th Section: Program Features -->
+<section class="section">
+<h2>Program Features & Skills</h2>
+
+<!-- First row: 2 cards centered -->
+<div class="card-container cards-2" style="justify-content:center;">
+<div class="card"><h3>Leadership Skills</h3><p>Strategic management, business communications, and decision making.</p></div>
+<div class="card"><h3>Electives</h3><p>Specialize in Marketing, Finance, Analytics, HR and more.</p></div>
+</div>
+
+<!-- Second row: 3 cards centered -->
+<div class="card-container cards-3" style="justify-content:center; margin-top:30px;">
+<div class="card"><h3>Industry Case Studies</h3><p>Real-world projects from companies like Zomato, ITC, Ola.</p></div>
+<div class="card"><h3>Alumni Network</h3><p>Access to exclusive events and networking opportunities.</p></div>
+<div class="card"><h3>Scholarships</h3><p>Exclusive scholarships for defence, alumni & employees.</p></div>
+</div>
+</section>
+
+
+<!-- 5th Section: Stats -->
+<section class="section" id="stats-section">
+<h2>Admissions & Placement Statistics</h2>
+<div style="display:flex; flex-wrap:wrap; justify-content:center; align-items:center; gap:50px;">
+  <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:30px; text-align:center;">
+    <canvas id="chart1" width="150" height="150"></canvas>
+    <canvas id="chart2" width="150" height="150"></canvas>
+    <canvas id="chart3" width="150" height="150"></canvas>
+    <canvas id="chart4" width="150" height="150"></canvas>
+    <canvas id="chart5" width="150" height="150"></canvas>
+  </div>
+  <div class="line-card" style="width:400px; height:300px;">
+    <h3>Placement Growth (2020-2025)</h3>
+    <canvas id="lineChart" style="margin-top:20px;"></canvas>
+  </div>
+</div>
+</section>
+
+<!-- 6th Section: Summary -->
+<section class="section">
+<h2>Program Summary</h2>
+<div class="card-container cards-4">
+<div class="card"><h3>Program Duration</h3><p>24 Months, blended learning (Live + Recorded)</p></div>
+<div class="card"><h3>Mode of Study</h3><p>Flexible online MBA accessible globally.</p></div>
+<div class="card"><h3>Certificate</h3><p>Industry-recognized degree from VIT University.</p></div>
+<div class="card"><h3>Support</h3><p>Career guidance, mentorship, and placement assistance.</p></div>
+</div>
+</section>
+
+<footer>
+© 2025 Course Connect | Paras Patil | All Rights Reserved
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+// --- Pie Charts ---
+const pieData = [
+  {id:'chart1', label:'Admissions', value:90, color:'#0073e6'},
+  {id:'chart2', label:'Placements', value:88, color:'#00b3b3'},
+  {id:'chart3', label:'Salary Hike', value:77, color:'#00cc66'},
+  {id:'chart4', label:'MBA Hiring', value:91, color:'#ffaa00'},
+  {id:'chart5', label:'Student Satisfaction', value:95, color:'#ff3366'}
+];
+pieData.forEach(d => {
+  new Chart(document.getElementById(d.id), {
+    type: 'doughnut',
+    data: { labels:[d.label,'Remaining'], datasets:[{data:[d.value,100-d.value], backgroundColor:[d.color,'#e0e0e0'], borderWidth:0}] },
+    options: { cutout:'70%', plugins:{legend:{display:false}, tooltip:{enabled:true}, title:{display:true,text:d.value+'%', color:'#111', font:{size:18, weight:'bold'}}}, animation:{animateScale:true,animateRotate:true} }
+  });
+});
+
+// --- Line Chart ---
+new Chart(document.getElementById('lineChart'), {
+  type: 'line',
+  data: {
+    labels:['2020','2021','2022','2023','2024','2025'],
+    datasets:[{label:'Placement %', data:[65,72,80,86,91,95], fill:false, borderColor:'#0073e6', tension:0.4, borderWidth:3, pointBackgroundColor:'#0073e6'}]
+  },
+  options: { scales:{y:{beginAtZero:true,max:100}}, plugins:{legend:{display:false}}, animation:{duration:2000,easing:'easeOutBounce'} }
+});
+</script>
+
+</body>
+</html>
