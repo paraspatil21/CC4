@@ -305,6 +305,39 @@
             object-fit: contain;
             padding: 8px;
         }
+        
+        /* New MBA section styles */
+        .mba-section {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            color: white;
+            border-radius: 1.5rem;
+            overflow: hidden;
+        }
+        
+        .ranking-card {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .ranking-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        .ranking-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        
+        .ranking-description {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
     </style>
 </head>
 <body class="min-h-screen">
@@ -351,7 +384,42 @@
             </div>
         </div>
     </section>
-</body>
+
+    <!-- New MBA Program Section -->
+    <section class="py-16 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="mba-section p-10 md:p-16 mb-16">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div class="animate-in">
+                        <h1 class="text-4xl md:text-5xl font-bold mb-6">Accelerate Your Leadership Journey with VIT's MBA</h1>
+                        <p class="text-xl mb-8 text-blue-100">The <strong>Vellore Institute of Technology (VIT)</strong> launches its 2-year <strong>online Master of Business Administration (MBA) Programme</strong>, that provides a transformative educational experience to empower your professional journey.</p>
+                        <p class="text-lg mb-8 text-blue-100">A Program designed to expand your business knowledge, enhance your leadership impact, drive innovation, make bold decisions, and seize growth opportunities.</p>
+                        <button class="px-8 py-4 bg-white text-blue-800 font-semibold rounded-xl hover:shadow-xl transition-all hover:scale-105">
+                            Apply for MBA Programme
+                        </button>
+                    </div>
+                    <div class="grid grid-cols-2 gap-6 slide-in-right">
+                        <div class="ranking-card">
+                            <div class="ranking-number">#14</div>
+                            <div class="ranking-description">Best University, 2025 NIRF University Rankings - India</div>
+                        </div>
+                        <div class="ranking-card">
+                            <div class="ranking-number">#14</div>
+                            <div class="ranking-description">Best Research, 2025 NIRF University Rankings - India</div>
+                        </div>
+                        <div class="ranking-card">
+                            <div class="ranking-number">TOP 2</div>
+                            <div class="ranking-description">2025 Shanghai ARWU Ranking</div>
+                        </div>
+                        <div class="ranking-card">
+                            <div class="ranking-number">791-800</div>
+                            <div class="ranking-description">QS World University Ranking 2025</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Hero Section -->
     <section class="py-16 px-6 bg-gradient-to-br from-blue-50 to-indigo-100">
