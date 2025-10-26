@@ -287,7 +287,7 @@
         
         /* Logo styles */
         .logo {
-            width: 60px;
+            width: 150px;
             height: 60px;
             background: white;
             border-radius: 10px;
@@ -338,16 +338,79 @@
             font-size: 0.9rem;
             opacity: 0.9;
         }
+        
+        /* Announcement banner */
+        .announcement-banner {
+            background: linear-gradient(135deg, #f59e0b, #d97706);
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+            font-weight: 600;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .announcement-banner .marquee {
+            display: inline-block;
+            white-space: nowrap;
+            animation: marquee 20s linear infinite;
+        }
+        
+        @keyframes marquee {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+        
+        /* About VIT section */
+        .about-vit {
+            background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+            color: white;
+        }
+        
+        /* VITOL Advantage section */
+        .advantage-card {
+            background: white;
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+        
+        .advantage-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+        
+        /* Quick Links section */
+        .quick-links {
+            background: #f8fafc;
+        }
+        
+        /* Contact section */
+        .contact-section {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            color: white;
+        }
     </style>
 </head>
 <body class="min-h-screen">
+    <!-- Announcement Banner -->
+    <div class="announcement-banner">
+        <div class="marquee">
+            Admissions Open Now for VITOL MBA/MSc Data Science/MCA Online Degree Programmes - Apply Now &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            Admissions Open Now for VITOL MBA/MSc Data Science/MCA Online Degree Programmes - Apply Now &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            Admissions Open Now for VITOL MBA/MSc Data Science/MCA Online Degree Programmes - Apply Now
+        </div>
+    </div>
+
     <!-- Header Section with Integrated Logo -->
     <header class="header-gradient text-white py-4 px-6 shadow-lg">
         <div class="max-w-7xl mx-auto flex justify-between items-center">
             <!-- Logo Section - Now integrated in header -->
             <div class="flex items-center space-x-3">
                 <div class="logo">
-                    <img src="./img/VIT logo.png" alt="VIT University Logo">
+                    <img src="VIT.png" alt="VIT University Logo">
                 </div>
                 <div>
                     <h1 class="text-xl font-bold">VIT University</h1>
@@ -358,16 +421,15 @@
             <!-- Navigation -->
             <nav class="hidden md:flex space-x-8">
                 <a href="#" class="font-medium hover:text-blue-200 transition-colors">Home</a>
-                <a href="#" class="font-medium hover:text-blue-200 transition-colors">Programmes</a>
-                <a href="#" class="font-medium hover:text-blue-200 transition-colors">Analytics</a>
-                <a href="#" class="font-medium hover:text-blue-200 transition-colors">About</a>
-                <a href="#" class="font-medium hover:text-blue-200 transition-colors">Contact</a>
+                <a href="about VIT.html" class="font-medium hover:text-blue-200 transition-colors">About VIT</a>
+                <a href="academics.html" class="font-medium hover:text-blue-200 transition-colors">Academics</a>
+                <a href="degree.html" class="font-medium hover:text-blue-200 transition-colors">Degree Programmes</a>
             </nav>
             
             <!-- CTA Button -->
-            <button class="px-5 py-2 bg-white text-blue-800 font-medium rounded-lg hover:shadow-lg transition-all hover:scale-105">
+            <a href="https://forms.gle/Vd6DR2UeB9LbPJuC7" class="px-5 py-2 bg-white text-blue-800 font-medium rounded-lg hover:shadow-lg transition-all hover:scale-105">
                 Apply Now
-            </button>
+            </a>
         </div>
     </header>
 
@@ -378,8 +440,11 @@
             <div class="carousel-item">
                 <img src="./img/vit_hero.png" alt="Online Learning" class="w-full h-full object-cover">
                 <div class="carousel-caption">
-                    <h2 class="text-3xl font-bold mb-2">Online Degree Programmes</h2>
-                    <p class="text-lg">UGC Approved Flexible Learning for Working Professionals</p>
+                    <h2 class="text-3xl font-bold mb-2">Build Your Professional Career with an MBA from VIT Online</h2>
+                    <p class="text-lg">Admissions Open Now</p>
+                    <a href="https://forms.gle/Vd6DR2UeB9LbPJuC7" class="mt-4 px-6 py-3 bg-white text-blue-800 font-semibold rounded-lg hover:shadow-lg transition-all inline-block">
+                        Enquire Now
+                    </a>
                 </div>
             </div>
         </div>
@@ -394,9 +459,9 @@
                         <h1 class="text-4xl md:text-5xl font-bold mb-6">Accelerate Your Leadership Journey with VIT's MBA</h1>
                         <p class="text-xl mb-8 text-blue-100">The <strong>Vellore Institute of Technology (VIT)</strong> launches its 2-year <strong>online Master of Business Administration (MBA) Programme</strong>, that provides a transformative educational experience to empower your professional journey.</p>
                         <p class="text-lg mb-8 text-blue-100">A Program designed to expand your business knowledge, enhance your leadership impact, drive innovation, make bold decisions, and seize growth opportunities.</p>
-                        <button class="px-8 py-4 bg-white text-blue-800 font-semibold rounded-xl hover:shadow-xl transition-all hover:scale-105">
+                        <a href="https://forms.gle/Vd6DR2UeB9LbPJuC7" class="px-8 py-4 bg-white text-blue-800 font-semibold rounded-xl hover:shadow-xl transition-all hover:scale-105 inline-block">
                             Apply for MBA Programme
-                        </button>
+                        </a>
                     </div>
                     <div class="grid grid-cols-2 gap-6 slide-in-right">
                         <div class="ranking-card">
@@ -426,14 +491,15 @@
         <div class="max-w-7xl mx-auto">
             <div class="text-center max-w-4xl mx-auto mb-16">
                 <h1 class="text-5xl md:text-6xl font-bold mb-6 animate-in" style="animation-delay: 0.1s">
-                    <span class="gradient-text">Move Up</span> In Your Career
+                    <span class="gradient-text">Join World Ranked VIT's</span><br>
+                    <span class="text-4xl md:text-5xl">UGC Approved Online Degree Programmes</span>
                 </h1>
                 <p class="text-xl text-gray-600 mb-10 animate-in" style="animation-delay: 0.3s">
-                    UGC Approved Online Degree Programmes from VIT University
+                    Move Up In Your Career with VIT University Online Programmes
                 </p>
-                <button class="px-8 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold rounded-xl hover:shadow-xl transition-all bounce-in hover:scale-105" style="animation-delay: 0.5s">
+                <a href="https://forms.gle/Vd6DR2UeB9LbPJuC7" class="px-8 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold rounded-xl hover:shadow-xl transition-all bounce-in hover:scale-105 inline-block" style="animation-delay: 0.5s">
                     Explore Programmes
-                </button>
+                </a>
             </div>
             
             <!-- Program Cards - Now Square and Centered -->
@@ -455,9 +521,9 @@
                                 <span>Duration: 24 Months</span>
                             </div>
                         </div>
-                        <button class="w-full py-3 bg-white text-blue-800 font-semibold rounded-xl hover:shadow-lg transition-all hover:scale-105 flex items-center justify-center">
+                        <a href="mba.html" class="w-full py-3 bg-white text-blue-800 font-semibold rounded-xl hover:shadow-lg transition-all hover:scale-105 flex items-center justify-center">
                             Know More <i class="fas fa-arrow-right ml-2"></i>
-                        </button>
+                        </a>
                     </div>
                     
                     <!-- MCA Card -->
@@ -476,9 +542,9 @@
                                 <span>Duration: 24 Months</span>
                             </div>
                         </div>
-                        <button class="w-full py-3 bg-white text-teal-800 font-semibold rounded-xl hover:shadow-lg transition-all hover:scale-105 flex items-center justify-center">
+                        <a href="mca.html" class="w-full py-3 bg-white text-teal-800 font-semibold rounded-xl hover:shadow-lg transition-all hover:scale-105 flex items-center justify-center">
                             Know More <i class="fas fa-arrow-right ml-2"></i>
-                        </button>
+                        </a>
                     </div>
                     
                     <!-- M.Sc. Data Science Card -->
@@ -497,9 +563,30 @@
                                 <span>Duration: 24 Months</span>
                             </div>
                         </div>
-                        <button class="w-full py-3 bg-white text-purple-800 font-semibold rounded-xl hover:shadow-lg transition-all hover:scale-105 flex items-center justify-center">
+                        <a href="ds.html" class="w-full py-3 bg-white text-purple-800 font-semibold rounded-xl hover:shadow-lg transition-all hover:scale-105 flex items-center justify-center">
                             Know More <i class="fas fa-arrow-right ml-2"></i>
-                        </button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Accreditation Badges -->
+            <div class="flex justify-center mb-12">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl">
+                    <div class="bg-white rounded-2xl p-6 shadow-lg text-center">
+                        <i class="fas fa-university text-4xl text-blue-600 mb-4"></i>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">UGC Entitled</h3>
+                        <p class="text-gray-600">Recognized by University Grants Commission</p>
+                    </div>
+                    <div class="bg-white rounded-2xl p-6 shadow-lg text-center">
+                        <i class="fas fa-award text-4xl text-green-600 mb-4"></i>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">NAAC A++</h3>
+                        <p class="text-gray-600">Highest accreditation grade</p>
+                    </div>
+                    <div class="bg-white rounded-2xl p-6 shadow-lg text-center">
+                        <i class="fas fa-check-circle text-4xl text-purple-600 mb-4"></i>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">AICTE Approved</h3>
+                        <p class="text-gray-600">Approved by All India Council for Technical Education</p>
                     </div>
                 </div>
             </div>
@@ -544,10 +631,44 @@
                                 <option value="mca">MCA</option>
                                 <option value="msds">MS in Data Science</option>
                             </select>
-                            <button type="submit" class="w-full py-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold rounded-lg hover:shadow-lg transition-all">
+                            <a href="https://forms.gle/Vd6DR2UeB9LbPJuC7" class="w-full py-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold rounded-lg hover:shadow-lg transition-all inline-block text-center">
                                 Submit Application
-                            </button>
+                            </a>
                         </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About VIT Section -->
+    <section class="py-16 px-6 about-vit">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="animate-in">
+                    <h2 class="text-4xl font-bold mb-6">VIT Online Learning Institute</h2>
+                    <p class="text-lg mb-6 text-gray-200">
+                        VIT Online Education was started with the objective of offering online education to aspiring learners around the globe. VIT Online Education will cater to the needs of students and working professionals interested in pursuing higher education at their own pace, and it provides flexibility in learning. The development in information and communication technologies paves way for taking education to the doorstep of learners.
+                    </p>
+                    <p class="text-lg mb-6 text-gray-200">
+                        VIT Online Education aims at creating and offering programmes and courses in emerging areas with a focus on quality, adhering to the regulations of UGC and AICTE. It has state-of-the-art facilities for the development and delivery of online programmes.
+                    </p>
+                    <p class="text-lg mb-6 text-gray-200">
+                        Experienced faculty members of VIT are presenting the lectures of online Degree Programmes.
+                    </p>
+                </div>
+                <div class="slide-in-right">
+                    <div class="bg-gradient-to-br from-blue-600 to-indigo-700 rounded-2xl p-8 shadow-2xl">
+                        <h3 class="text-3xl font-bold mb-6">Vellore Institute of Technology</h3>
+                        <p class="text-lg mb-6 text-blue-100">
+                            VIT was established with the aim of providing quality higher education on par with international standards. It persistently seeks and adopts innovative methods to improve the quality of higher education on a consistent basis.
+                        </p>
+                        <p class="text-lg mb-6 text-blue-100">
+                            The campus has a cosmopolitan atmosphere with students from all corners of the globe.
+                        </p>
+                        <a href="about VIT.html" class="px-6 py-3 bg-white text-blue-800 font-semibold rounded-lg hover:shadow-lg transition-all inline-block">
+                            Click here for more information
+                        </a>
                     </div>
                 </div>
             </div>
@@ -631,8 +752,68 @@
         </div>
     </section>
 
-    <!-- Additional Info Section -->
+    <!-- VITOL Advantage Section -->
     <section class="py-16 px-6 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">VITOL Advantage</h2>
+                <p class="text-xl text-gray-600">Why choose VIT Online Learning for your education</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="advantage-card">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-bullseye text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Well-defined learning objectives</h3>
+                    <p class="text-gray-600">Clear, measurable goals that guide your educational journey and ensure you achieve your career aspirations.</p>
+                </div>
+                
+                <div class="advantage-card">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-users text-green-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Continuous Student Engagement</h3>
+                    <p class="text-gray-600">Regular interactions with faculty and peers to enhance learning and build professional networks.</p>
+                </div>
+                
+                <div class="advantage-card">
+                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-video text-purple-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Synchronous and Asynchronous Classes</h3>
+                    <p class="text-gray-600">Flexible learning options with both live interactive sessions and self-paced recorded lectures.</p>
+                </div>
+                
+                <div class="advantage-card">
+                    <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-chalkboard-teacher text-yellow-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Course mentors for Regular Interaction</h3>
+                    <p class="text-gray-600">Dedicated mentors to guide you throughout your program and provide personalized support.</p>
+                </div>
+                
+                <div class="advantage-card">
+                    <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-book text-red-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Structured Course Materials</h3>
+                    <p class="text-gray-600">Comprehensive, well-organized learning resources designed for effective online education.</p>
+                </div>
+                
+                <div class="advantage-card">
+                    <div class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-headset text-indigo-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Student Support</h3>
+                    <p class="text-gray-600">Comprehensive support services including academic advising, technical assistance, and career guidance.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Additional Info Section -->
+    <section class="py-16 px-6 bg-gray-50">
         <div class="max-w-7xl mx-auto">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
                 <!-- Certificate Programmes -->
@@ -644,6 +825,17 @@
                         <div class="flex items-center mb-4">
                             <i class="far fa-clock text-amber-600 mr-2"></i>
                             <span class="text-gray-600">Duration: 16 weeks</span>
+                        </div>
+                        <button class="px-5 py-2 bg-amber-600 text-white font-medium rounded-lg hover:bg-amber-700 transition-colors">
+                            Know More
+                        </button>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl p-6 mb-6 shadow-md">
+                        <h3 class="text-xl font-bold mb-3 text-gray-800">AI and Machine Learning</h3>
+                        <div class="flex items-center mb-4">
+                            <i class="far fa-clock text-amber-600 mr-2"></i>
+                            <span class="text-gray-600">Duration: 16 Weeks</span>
                         </div>
                         <button class="px-5 py-2 bg-amber-600 text-white font-medium rounded-lg hover:bg-amber-700 transition-colors">
                             Know More
@@ -704,9 +896,105 @@
                     <div class="bg-white rounded-xl p-6 shadow-md">
                         <h3 class="text-xl font-bold mb-4 text-gray-800">Ready to advance your career?</h3>
                         <p class="text-gray-600 mb-4">Join thousands of professionals who have transformed their careers with VIT University Online Programmes.</p>
-                        <button class="w-full py-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold rounded-lg hover:shadow-lg transition-all">
+                        <a href="https://forms.gle/Vd6DR2UeB9LbPJuC7" class="w-full py-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold rounded-lg hover:shadow-lg transition-all inline-block text-center">
                             Apply Now
-                        </button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Links Section -->
+    <section class="py-16 px-6 quick-links">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl font-bold mb-8 text-center text-gray-800">Quick Links</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <a href="#" class="bg-white rounded-xl p-6 text-center shadow-md hover:shadow-lg transition-all hover:scale-105">
+                    <i class="fas fa-file-alt text-3xl text-blue-600 mb-4"></i>
+                    <h3 class="text-lg font-bold text-gray-800">Regulations</h3>
+                </a>
+                <a href="#" class="bg-white rounded-xl p-6 text-center shadow-md hover:shadow-lg transition-all hover:scale-105">
+                    <i class="fas fa-check-circle text-3xl text-green-600 mb-4"></i>
+                    <h3 class="text-lg font-bold text-gray-800">UGC Approval</h3>
+                </a>
+                <a href="#" class="bg-white rounded-xl p-6 text-center shadow-md hover:shadow-lg transition-all hover:scale-105">
+                    <i class="fas fa-check-double text-3xl text-purple-600 mb-4"></i>
+                    <h3 class="text-lg font-bold text-gray-800">AICTE Approval</h3>
+                </a>
+                <a href="#" class="bg-white rounded-xl p-6 text-center shadow-md hover:shadow-lg transition-all hover:scale-105">
+                    <i class="fas fa-file-contract text-3xl text-red-600 mb-4"></i>
+                    <h3 class="text-lg font-bold text-gray-800">Affidavit</h3>
+                </a>
+                <a href="#" class="bg-white rounded-xl p-6 text-center shadow-md hover:shadow-lg transition-all hover:scale-105">
+                    <i class="fas fa-comment-alt text-3xl text-yellow-600 mb-4"></i>
+                    <h3 class="text-lg font-bold text-gray-800">The Feedback Process</h3>
+                </a>
+                <a href="#" class="bg-white rounded-xl p-6 text-center shadow-md hover:shadow-lg transition-all hover:scale-105">
+                    <i class="fas fa-hands-helping text-3xl text-indigo-600 mb-4"></i>
+                    <h3 class="text-lg font-bold text-gray-800">E-Samadhan</h3>
+                </a>
+                <a href="#" class="bg-white rounded-xl p-6 text-center shadow-md hover:shadow-lg transition-all hover:scale-105">
+                    <i class="fas fa-chart-line text-3xl text-teal-600 mb-4"></i>
+                    <h3 class="text-lg font-bold text-gray-800">CIQA</h3>
+                </a>
+                <a href="#" class="bg-white rounded-xl p-6 text-center shadow-md hover:shadow-lg transition-all hover:scale-105">
+                    <i class="fas fa-balance-scale text-3xl text-orange-600 mb-4"></i>
+                    <h3 class="text-lg font-bold text-gray-800">Grievances</h3>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="py-16 px-6 contact-section">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div class="animate-in">
+                    <h2 class="text-4xl font-bold mb-6">Contact VIT Online Learning Institute</h2>
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-2xl mr-4 mt-1"></i>
+                            <div>
+                                <h3 class="text-xl font-bold mb-2">Address</h3>
+                                <p class="text-blue-100">#724 – Technology Tower, VIT<br>Vellore – 632014<br>Tamil Nadu, India</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-clock text-2xl mr-4 mt-1"></i>
+                            <div>
+                                <h3 class="text-xl font-bold mb-2">Office Hours</h3>
+                                <p class="text-blue-100">9:00am – 5:00pm</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-phone-alt text-2xl mr-4 mt-1"></i>
+                            <div>
+                                <h3 class="text-xl font-bold mb-2">Telephone</h3>
+                                <p class="text-blue-100">0416 220 2485</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-envelope text-2xl mr-4 mt-1"></i>
+                            <div>
+                                <h3 class="text-xl font-bold mb-2">Email</h3>
+                                <p class="text-blue-100">support@vitonline.in</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slide-in-right">
+                    <div class="bg-white rounded-2xl p-8 shadow-2xl">
+                        <h3 class="text-2xl font-bold mb-6 text-gray-800">Send us a Message</h3>
+                        <form class="space-y-4">
+                            <input type="text" placeholder="Your Name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            <input type="email" placeholder="Your Email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            <input type="text" placeholder="Subject" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            <textarea placeholder="Your Message" rows="5" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                            <a href="https://forms.gle/Vd6DR2UeB9LbPJuC7" class="w-full py-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold rounded-lg hover:shadow-lg transition-all inline-block text-center">
+                                Send Message
+                            </a>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -724,21 +1012,25 @@
                         </div>
                         <span class="text-xl font-bold">VIT University Online</span>
                     </div>
-                    <p class="text-gray-400">© 2025 Paras Patil Course Connect. All Rights Reserved.</p>
+                    <p class="text-gray-400">© 2025 VIT. All Rights Reserved.</p>
+                    <p class="text-gray-400 text-sm mt-2">Designed by Centre for Technical Support (CTS)</p>
                 </div>
                 
                 <div class="flex space-x-6">
                     <a href="#" class="text-gray-400 hover:text-white transition-colors">
-                        <i class="fab fa-facebook-f"></i>
-                    </a>
-                    <a href="#" class="text-gray-400 hover:text-white transition-colors">
                         <i class="fab fa-twitter"></i>
                     </a>
                     <a href="#" class="text-gray-400 hover:text-white transition-colors">
-                        <i class="fab fa-instagram"></i>
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fab fa-youtube"></i>
                     </a>
                     <a href="#" class="text-gray-400 hover:text-white transition-colors">
                         <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fab fa-instagram"></i>
                     </a>
                 </div>
             </div>
